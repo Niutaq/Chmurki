@@ -11,12 +11,12 @@
       "RelativeMoniker": "D:0:0:{AA9517C2-5D86-409F-8F4C-6698582A25AE}|WebAse\\WebAse.csproj|solutionrelative:webase\\pages\\dodajkomentarz.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AA9517C2-5D86-409F-8F4C-6698582A25AE}|WebAse\\WebAse.csproj|c:\\users\\sebcw\\documents\\github\\chmurki\\chmurki\\webase\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AA9517C2-5D86-409F-8F4C-6698582A25AE}|WebAse\\WebAse.csproj|solutionrelative:webase\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AA9517C2-5D86-409F-8F4C-6698582A25AE}|WebAse\\WebAse.csproj|c:\\users\\sebcw\\documents\\github\\chmurki\\chmurki\\webase\\pages\\error.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{AA9517C2-5D86-409F-8F4C-6698582A25AE}|WebAse\\WebAse.csproj|solutionrelative:webase\\pages\\error.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA9517C2-5D86-409F-8F4C-6698582A25AE}|WebAse\\WebAse.csproj|c:\\users\\sebcw\\documents\\github\\chmurki\\chmurki\\webase\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AA9517C2-5D86-409F-8F4C-6698582A25AE}|WebAse\\WebAse.csproj|solutionrelative:webase\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AA9517C2-5D86-409F-8F4C-6698582A25AE}|WebAse\\WebAse.csproj|c:\\users\\sebcw\\documents\\github\\chmurki\\chmurki\\webase\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -42,7 +42,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Home.razor",
               "DocumentMoniker": "C:\\Users\\sebcw\\Documents\\GitHub\\Chmurki\\Chmurki\\WebAse\\Pages\\Home.razor",
               "RelativeDocumentMoniker": "WebAse\\Pages\\Home.razor",
@@ -61,7 +61,7 @@
               "RelativeDocumentMoniker": "WebAse\\Pages\\ListaKomentarzy.razor",
               "ToolTip": "C:\\Users\\sebcw\\Documents\\GitHub\\Chmurki\\Chmurki\\WebAse\\Pages\\ListaKomentarzy.razor*",
               "RelativeToolTip": "WebAse\\Pages\\ListaKomentarzy.razor*",
-              "ViewState": "AQIAADEAAAAAAAAAAAAowFgAAAABAAAA",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAAAD8AAACYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-04-09T16:03:53.665Z",
               "EditorCaption": ""
@@ -72,9 +72,9 @@
               "Title": "DodajKomentarz.razor",
               "DocumentMoniker": "C:\\Users\\sebcw\\Documents\\GitHub\\Chmurki\\Chmurki\\WebAse\\Pages\\DodajKomentarz.razor",
               "RelativeDocumentMoniker": "WebAse\\Pages\\DodajKomentarz.razor",
-              "ToolTip": "C:\\Users\\sebcw\\Documents\\GitHub\\Chmurki\\Chmurki\\WebAse\\Pages\\DodajKomentarz.razor",
-              "RelativeToolTip": "WebAse\\Pages\\DodajKomentarz.razor",
-              "ViewState": "AQIAABwAAAAAAAAAAAAYwGoAAAABAAAA",
+              "ToolTip": "C:\\Users\\sebcw\\Documents\\GitHub\\Chmurki\\Chmurki\\WebAse\\Pages\\DodajKomentarz.razor*",
+              "RelativeToolTip": "WebAse\\Pages\\DodajKomentarz.razor*",
+              "ViewState": "AQIAABwAAAAAAAAAAAAYwDMAAACCAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-04-09T15:23:03.571Z",
               "EditorCaption": ""
@@ -107,13 +107,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Error.razor",
               "DocumentMoniker": "C:\\Users\\sebcw\\Documents\\GitHub\\Chmurki\\Chmurki\\WebAse\\Pages\\Error.razor",
               "RelativeDocumentMoniker": "WebAse\\Pages\\Error.razor",
               "ToolTip": "C:\\Users\\sebcw\\Documents\\GitHub\\Chmurki\\Chmurki\\WebAse\\Pages\\Error.razor",
               "RelativeToolTip": "WebAse\\Pages\\Error.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABsAAAApAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-04-09T14:43:11.262Z",
               "EditorCaption": ""
