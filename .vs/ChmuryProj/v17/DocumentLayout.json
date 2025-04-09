@@ -3,24 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\sebcw\\Documents\\GitHub\\Chmurki\\Chmurki\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2B713F87-F6EC-4B0B-89EC-C416769F6324}|ChmuryProj.Web\\ChmuryProj.Web.csproj|c:\\users\\sebcw\\documents\\github\\chmurki\\chmurki\\chmuryproj.web\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2B713F87-F6EC-4B0B-89EC-C416769F6324}|ChmuryProj.Web\\ChmuryProj.Web.csproj|solutionrelative:chmuryproj.web\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{AA9517C2-5D86-409F-8F4C-6698582A25AE}|WebAse\\WebAse.csproj|c:\\users\\sebcw\\documents\\github\\chmurki\\chmurki\\webase\\pages\\error.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AA9517C2-5D86-409F-8F4C-6698582A25AE}|WebAse\\WebAse.csproj|solutionrelative:webase\\pages\\error.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2B713F87-F6EC-4B0B-89EC-C416769F6324}|ChmuryProj.Web\\ChmuryProj.Web.csproj|c:\\users\\sebcw\\documents\\github\\chmurki\\chmurki\\chmuryproj.web\\components\\pages\\dodajkomentarz.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2B713F87-F6EC-4B0B-89EC-C416769F6324}|ChmuryProj.Web\\ChmuryProj.Web.csproj|solutionrelative:chmuryproj.web\\components\\pages\\dodajkomentarz.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2B713F87-F6EC-4B0B-89EC-C416769F6324}|ChmuryProj.Web\\ChmuryProj.Web.csproj|c:\\users\\sebcw\\documents\\github\\chmurki\\chmurki\\chmuryproj.web\\components\\pages\\listakomentarzy.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2B713F87-F6EC-4B0B-89EC-C416769F6324}|ChmuryProj.Web\\ChmuryProj.Web.csproj|solutionrelative:chmuryproj.web\\components\\pages\\listakomentarzy.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FCD1D75E-0BE5-4B67-9E5D-86BDE1EF1629}|ChmuryProj.Api\\ChmuryProj.Api.csproj|c:\\users\\sebcw\\documents\\github\\chmurki\\chmurki\\chmuryproj.api\\chmuryproj.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{FCD1D75E-0BE5-4B67-9E5D-86BDE1EF1629}|ChmuryProj.Api\\ChmuryProj.Api.csproj|solutionrelative:chmuryproj.api\\chmuryproj.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FCD1D75E-0BE5-4B67-9E5D-86BDE1EF1629}|ChmuryProj.Api\\ChmuryProj.Api.csproj|c:\\users\\sebcw\\documents\\github\\chmurki\\chmurki\\chmuryproj.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FCD1D75E-0BE5-4B67-9E5D-86BDE1EF1629}|ChmuryProj.Api\\ChmuryProj.Api.csproj|solutionrelative:chmuryproj.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AA9517C2-5D86-409F-8F4C-6698582A25AE}|WebAse\\WebAse.csproj|c:\\users\\sebcw\\documents\\github\\chmurki\\chmurki\\webase\\pages\\weather.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AA9517C2-5D86-409F-8F4C-6698582A25AE}|WebAse\\WebAse.csproj|solutionrelative:webase\\pages\\weather.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,63 +23,28 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Home.razor",
-              "DocumentMoniker": "C:\\Users\\sebcw\\Documents\\GitHub\\Chmurki\\Chmurki\\ChmuryProj.Web\\Components\\Pages\\Home.razor",
-              "RelativeDocumentMoniker": "ChmuryProj.Web\\Components\\Pages\\Home.razor",
-              "ToolTip": "C:\\Users\\sebcw\\Documents\\GitHub\\Chmurki\\Chmurki\\ChmuryProj.Web\\Components\\Pages\\Home.razor",
-              "RelativeToolTip": "ChmuryProj.Web\\Components\\Pages\\Home.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "Error.razor",
+              "DocumentMoniker": "C:\\Users\\sebcw\\Documents\\GitHub\\Chmurki\\Chmurki\\WebAse\\Pages\\Error.razor",
+              "RelativeDocumentMoniker": "WebAse\\Pages\\Error.razor",
+              "ToolTip": "C:\\Users\\sebcw\\Documents\\GitHub\\Chmurki\\Chmurki\\WebAse\\Pages\\Error.razor",
+              "RelativeToolTip": "WebAse\\Pages\\Error.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-06T19:18:25.086Z",
+              "WhenOpened": "2025-04-09T14:43:11.262Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ChmuryProj.Api.http",
-              "DocumentMoniker": "C:\\Users\\sebcw\\Documents\\GitHub\\Chmurki\\Chmurki\\ChmuryProj.Api\\ChmuryProj.Api.http",
-              "RelativeDocumentMoniker": "ChmuryProj.Api\\ChmuryProj.Api.http",
-              "ToolTip": "C:\\Users\\sebcw\\Documents\\GitHub\\Chmurki\\Chmurki\\ChmuryProj.Api\\ChmuryProj.Api.http",
-              "RelativeToolTip": "ChmuryProj.Api\\ChmuryProj.Api.http",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2025-04-06T19:05:58.626Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ListaKomentarzy.razor",
-              "DocumentMoniker": "C:\\Users\\sebcw\\Documents\\GitHub\\Chmurki\\Chmurki\\ChmuryProj.Web\\Components\\Pages\\ListaKomentarzy.razor",
-              "RelativeDocumentMoniker": "ChmuryProj.Web\\Components\\Pages\\ListaKomentarzy.razor",
-              "ToolTip": "C:\\Users\\sebcw\\Documents\\GitHub\\Chmurki\\Chmurki\\ChmuryProj.Web\\Components\\Pages\\ListaKomentarzy.razor",
-              "RelativeToolTip": "ChmuryProj.Web\\Components\\Pages\\ListaKomentarzy.razor",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAC8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-06T18:34:06.763Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "DodajKomentarz.razor",
-              "DocumentMoniker": "C:\\Users\\sebcw\\Documents\\GitHub\\Chmurki\\Chmurki\\ChmuryProj.Web\\Components\\Pages\\DodajKomentarz.razor",
-              "RelativeDocumentMoniker": "ChmuryProj.Web\\Components\\Pages\\DodajKomentarz.razor",
-              "ToolTip": "C:\\Users\\sebcw\\Documents\\GitHub\\Chmurki\\Chmurki\\ChmuryProj.Web\\Components\\Pages\\DodajKomentarz.razor",
-              "RelativeToolTip": "ChmuryProj.Web\\Components\\Pages\\DodajKomentarz.razor",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACgAAAANAAAAAAAAAA==",
+              "Title": "Weather.razor",
+              "DocumentMoniker": "C:\\Users\\sebcw\\Documents\\GitHub\\Chmurki\\Chmurki\\WebAse\\Pages\\Weather.razor",
+              "RelativeDocumentMoniker": "WebAse\\Pages\\Weather.razor",
+              "ToolTip": "C:\\Users\\sebcw\\Documents\\GitHub\\Chmurki\\Chmurki\\WebAse\\Pages\\Weather.razor",
+              "RelativeToolTip": "WebAse\\Pages\\Weather.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-06T18:33:27.339Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\sebcw\\Documents\\GitHub\\Chmurki\\Chmurki\\ChmuryProj.Api\\Program.cs",
-              "RelativeDocumentMoniker": "ChmuryProj.Api\\Program.cs",
-              "ToolTip": "C:\\Users\\sebcw\\Documents\\GitHub\\Chmurki\\Chmurki\\ChmuryProj.Api\\Program.cs",
-              "RelativeToolTip": "ChmuryProj.Api\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD0AAACAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-06T19:00:53.071Z"
+              "WhenOpened": "2025-04-09T14:43:07.288Z",
+              "EditorCaption": ""
             }
           ]
         }

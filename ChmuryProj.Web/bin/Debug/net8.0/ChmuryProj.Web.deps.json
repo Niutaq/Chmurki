@@ -552,10 +552,7 @@
           "Swashbuckle.AspNetCore": "8.0.0"
         },
         "runtime": {
-          "ChmuryProj.Api.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "ChmuryProj.Api.dll": {}
         }
       }
     }
