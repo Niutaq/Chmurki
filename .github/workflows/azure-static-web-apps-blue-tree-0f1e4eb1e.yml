@@ -1,5 +1,4 @@
 name: Azure Static Web Apps CI/CD
-
 on:
   push:
     branches:
@@ -8,7 +7,6 @@ on:
     types: [opened, synchronize, reopened, closed]
     branches:
       - main
-
 jobs:
   build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
@@ -22,48 +20,50 @@ jobs:
         with:
           submodules: true
           lfs: false
-
-      # Approach: Let's manually extract the static files from wwwroot without building
-      - name: Extract Static Files
+          
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '8.0.x'
+          
+      - name: Build Blazor WebAssembly
+        run: |
+          cd ChmuryProj.Web
+          dotnet publish -c Release -o ../publish
+          
+      - name: Prepare Static Files
         run: |
           mkdir -p deploy
-          # If wwwroot already exists in the repo, copy it directly
-          if [ -d "ChmuryProj.Web/wwwroot" ]; then
-            cp -r ChmuryProj.Web/wwwroot/* deploy/
+          cp -r publish/wwwroot/* deploy/
+          # Upewnij się, że index.html istnieje w folderze deploy
+          if [ -f "publish/wwwroot/index.html" ]; then
+            echo "index.html found in wwwroot"
           else
-            # Otherwise, copy basic static assets that would normally be in wwwroot
-            if [ -d "ChmuryProj.Web/wwwroot" ]; then
-              cp -r ChmuryProj.Web/wwwroot/* deploy/
-            elif [ -d "ChmuryProj.Web/Assets" ]; then
-              cp -r ChmuryProj.Web/Assets/* deploy/
-            fi
-            # Copy any other static files that might be needed
-            if [ -d "ChmuryProj.Web/js" ]; then
-              mkdir -p deploy/js
-              cp -r ChmuryProj.Web/js/* deploy/js/
-            fi
-            if [ -d "ChmuryProj.Web/css" ]; then
-              mkdir -p deploy/css
-              cp -r ChmuryProj.Web/css/* deploy/css/
-            fi
-            if [ -d "ChmuryProj.Web/images" ]; then
-              mkdir -p deploy/images
-              cp -r ChmuryProj.Web/images/* deploy/images/
-            fi
-            if [ -d "ChmuryProj.Web/lib" ]; then
-              mkdir -p deploy/lib
-              cp -r ChmuryProj.Web/lib/* deploy/lib/
-            fi
-          fi
-          # Create a simple index.html if it doesn't exist
-          if [ ! -f "deploy/index.html" ] && [ -f "ChmuryProj.Web/index.html" ]; then
-            cp ChmuryProj.Web/index.html deploy/
+            echo "Creating index.html in deploy folder"
+            cat > deploy/index.html << 'EOL'
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <meta charset="utf-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+                <title>ChmuryProj</title>
+                <base href="/" />
+                <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+                <link href="css/app.css" rel="stylesheet" />
+                <link href="ChmuryProj.Web.styles.css" rel="stylesheet" />
+            </head>
+            <body>
+                <div id="app">Ładowanie...</div>
+                <script src="_framework/blazor.webassembly.js"></script>
+            </body>
+            </html>
+            EOL
           fi
           ls -la deploy
-
+          
       - name: Install OIDC Client from Core Package
         run: npm install @actions/core@1.6.0 @actions/http-client
-
+        
       - name: Get Id Token
         uses: actions/github-script@v6
         id: idtoken
@@ -72,21 +72,19 @@ jobs:
             const coredemo = require('@actions/core')
             return await coredemo.getIDToken()
           result-encoding: string
-
+          
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_BLUE_TREE_0F1E4EB1E }}
           action: "upload"
-          ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
-          # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
+          # Repository/Build Configurations
           app_location: "deploy" # App source code path - our manually copied static files
           api_location: "" # No API to deploy
           skip_app_build: true # Skip build as we've already prepared the static files
           github_id_token: ${{ steps.idtoken.outputs.result }}
-          ###### End of Repository/Build Configurations ######
-
+          
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
     runs-on: ubuntu-latest
