@@ -61,7 +61,7 @@ else
         {
             isLoading = true;
             errorMessage = null;
-            komentarze = await Http.GetFromJsonAsync<List<KomentarzEntity>>("https://chmurystudproj-b6eqgucwbzd6craj.polandcentral-01.azurewebsites.net/api/Komentarze") ?? new();
+            komentarze = await Http.GetFromJsonAsync<List<KomentarzEntity>>("https://chmuryprojapi20250406210134.azurewebsites.net/api/Komentarze") ?? new();
         }
         catch (HttpRequestException ex)
         {
