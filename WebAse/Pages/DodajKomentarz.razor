@@ -1,17 +1,20 @@
 ﻿@page "/dodaj-komentarz"
 @using WebAse.Models
-
 @inject HttpClient Http
 @inject NavigationManager Navigation
-
-
 <PageTitle>Dodaj komentarz</PageTitle>
 <h3>Dodaj nowy komentarz</h3>
+
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <div class="alert alert-danger">
+        @errorMessage
+    </div>
+}
+
 <EditForm Model="@newKomentarz" OnValidSubmit="@HandleSubmit" FormName="AddCommentForm">
     <DataAnnotationsValidator />
     <ValidationSummary />
-
-
     <div class="form-group">
         <label>Imię/Nick:</label>
         <InputText @bind-Value="newKomentarz.Name" class="form-control" />
@@ -20,21 +23,34 @@
         <label>Treść komentarza:</label>
         <InputTextArea @bind-Value="newKomentarz.Message" class="form-control" rows="4" />
     </div>
-    <button type="submit" class="btn btn-success mt-3">Dodaj komentarz</button>
+    <button type="submit" class="btn btn-success mt-3" disabled="@isSubmitting">
+        @if (isSubmitting)
+        {
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            <span> Wysyłanie...</span>
+        }
+        else
+        {
+            <span>Dodaj komentarz</span>
+        }
+    </button>
     <a href="/komentarze" class="btn btn-secondary mt-3">Anuluj</a>
 </EditForm>
 
 @code {
     private Komentarz newKomentarz = new Komentarz();
-
+    private string errorMessage = string.Empty;
+    private bool isSubmitting = false;
 
     private async Task HandleSubmit()
     {
-
+        errorMessage = string.Empty;
+        isSubmitting = true;
 
         try
         {
             var response = await Http.PostAsJsonAsync("https://chmuryprojapi20250406210134.azurewebsites.net/api/Komentarze", newKomentarz);
+
             if (response.IsSuccessStatusCode)
             {
                 Navigation.NavigateTo("/komentarze");
@@ -43,11 +59,49 @@
             {
                 var error = await response.Content.ReadAsStringAsync();
                 Console.WriteLine($"Błąd API: {error}");
+
+                // Wyświetl bardziej szczegółową informację o błędzie
+                errorMessage = $"Błąd serwera: {response.StatusCode}. ";
+
+                // Jeśli mamy treść błędu, dodaj ją również
+                if (!string.IsNullOrEmpty(error))
+                {
+                    try
+                    {
+                        // Próba przetworzenia błędu jako JSON (jeśli serwer zwraca błędy w formacie JSON)
+                        var jsonError = System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, object>>(error);
+                        if (jsonError != null && jsonError.ContainsKey("message"))
+                        {
+                            errorMessage += jsonError["message"].ToString();
+                        }
+                        else
+                        {
+                            errorMessage += error.Length > 100 ? error.Substring(0, 100) + "..." : error;
+                        }
+                    }
+                    catch
+                    {
+                        // Jeśli nie jest to JSON, pokaż surowy tekst błędu
+                        errorMessage += error.Length > 100 ? error.Substring(0, 100) + "..." : error;
+                    }
+                }
             }
         }
         catch (Exception ex)
         {
             Console.WriteLine($"Błąd: {ex}");
+            errorMessage = $"Wystąpił błąd podczas łączenia z serwerem: {ex.Message}";
+
+            // Sprawdź czy błąd dotyczy CORS
+            if (ex.Message.Contains("CORS") || ex.InnerException?.Message.Contains("CORS") == true)
+            {
+                errorMessage = "Błąd CORS: Brak dostępu do API. Skontaktuj się z administratorem serwera.";
+            }
+        }
+        finally
+        {
+            isSubmitting = false;
+            StateHasChanged();
         }
     }
 }

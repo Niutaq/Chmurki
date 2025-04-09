@@ -1,20 +1,24 @@
-﻿@* Strona z listą komentarzy (np. KomentarzeList.razor) *@
-@page "/komentarze"
-
+﻿@page "/komentarze"
 @using System.Net.Http
 @using WebAse.Models
-
 @inject HttpClient Http
 
 <PageTitle>Komentarze</PageTitle>
-
 <h3>Lista komentarzy</h3>
 
-@if (komentarze == null)
+@if (isLoading)
 {
     <p>Ładowanie...</p>
 }
-else if (!komentarze.Any())
+else if (errorMessage != null)
+{
+    <div class="alert alert-danger">
+        <h4>Błąd podczas pobierania danych</h4>
+        <p>@errorMessage</p>
+        <button class="btn btn-primary" @onclick="RetryLoading">Spróbuj ponownie</button>
+    </div>
+}
+else if (komentarze == null || !komentarze.Any())
 {
     <p>Brak komentarzy</p>
 }
@@ -43,10 +47,43 @@ else
 
 @code {
     private List<KomentarzEntity> komentarze = new();
+    private string? errorMessage;
+    private bool isLoading = true;
 
     protected override async Task OnInitializedAsync()
     {
-        var response = await Http.GetFromJsonAsync<List<KomentarzEntity>>("https://chmuryprojapi20250406210134.azurewebsites.net/api/Komentarze");
-        komentarze = response ?? new();
+        await LoadData();
+    }
+
+    private async Task LoadData()
+    {
+        try
+        {
+            isLoading = true;
+            errorMessage = null;
+            komentarze = await Http.GetFromJsonAsync<List<KomentarzEntity>>("https://chmuryprojapi20250406210134.azurewebsites.net/api/Komentarze") ?? new();
+        }
+        catch (HttpRequestException ex)
+        {
+            errorMessage = $"Błąd podczas komunikacji z serwerem: {ex.Message}";
+            if (ex.Message.Contains("CORS"))
+            {
+                errorMessage = "Błąd CORS: Serwer API nie zezwala na żądania z tej aplikacji. Skontaktuj się z administratorem.";
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Wystąpił nieoczekiwany błąd: {ex.Message}";
+        }
+        finally
+        {
+            isLoading = false;
+            StateHasChanged();
+        }
+    }
+
+    private async Task RetryLoading()
+    {
+        await LoadData();
     }
 }
