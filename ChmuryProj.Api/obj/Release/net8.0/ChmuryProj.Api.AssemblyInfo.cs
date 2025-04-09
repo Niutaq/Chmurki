@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ChmuryProj.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f8f19fb3995ca1bd9d8174049604ce3918c59863")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6f728966595fb694d4946d648445cb018bc668c8")]
 [assembly: System.Reflection.AssemblyProductAttribute("ChmuryProj.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ChmuryProj.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
