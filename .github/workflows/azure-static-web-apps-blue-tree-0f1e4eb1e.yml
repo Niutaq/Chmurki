@@ -26,10 +26,15 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: "8.0.x"
-      - name: Build Web Project
+      - name: Build Web Project Only
         run: |
-          cd ChmuryProj.Web
-          dotnet publish -c Release -o ../publish
+          # Create a separate build directory
+          mkdir -p buildweb
+          # Copy only the Web project files
+          cp -r ChmuryProj.Web/* buildweb/
+          cd buildweb
+          # Build without dependencies to avoid pulling in the API project
+          dotnet publish --no-dependencies -c Release -o ../publish ChmuryProj.Web.csproj
       - name: Install OIDC Client from Core Package
         run: npm install @actions/core@1.6.0 @actions/http-client
       - name: Get Id Token
