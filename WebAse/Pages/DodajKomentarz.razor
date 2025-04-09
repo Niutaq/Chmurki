@@ -34,7 +34,7 @@
 
         try
         {
-            var response = await Http.PostAsJsonAsync("https://chmuryprojapi20250406210134.azurewebsites.net/api/Komentarze/xd", newKomentarz);
+            var response = await Http.PostAsJsonAsync("https://chmuryprojapi20250406210134.azurewebsites.net/api/Komentarze", newKomentarz);
             if (response.IsSuccessStatusCode)
             {
                 Navigation.NavigateTo("/komentarze");
